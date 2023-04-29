@@ -1,0 +1,38 @@
+# @url = http://localhost:4000/restaurants/
+@now = {{$timestamp}} 
+@rid = 47fb548d-dac7-4092-aa1a-fb48db8ac85b
+# @rid = 2
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNjgxNjYxMTkwLCJzdWIiOiIzZjJkMDcwMC1jY2I2LTRhMDQtYWZmZi1lZDRkMzc3MWRhOWIiLCJlbWFpbCI6InRlc3RAZG9tYWluLnVrIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6e30sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE2ODE2NTc1OTB9XSwic2Vzc2lvbl9pZCI6ImIzNDQ0OTc2LTRkYzMtNGQzZC1hNGM1LTY4ODcxZDA3ZmRjYiJ9.EFjgTQv3reYBsl2IXAZ0tfo2QdPKCVzAbiJBKJZL4y4
+
+get http://localhost:4000
+
+###
+get {{url}}
+###
+get {{url}}{{rid}}
+###
+get {{url}}starred
+
+###
+post {{url}}
+Content-Type: application/json
+
+{
+  "name": "new {{now}}"
+}
+
+###
+delete {{url}}{{rid}}
+
+###
+post {{url}}signin
+Content-Type: application/json
+
+{
+  "email": "test@domain.uk",
+  "password": "password"
+}
+###
+get {{url}}
+APIKEY: {{anon_key}}
+Authorization: Bearer {{anon_key}}

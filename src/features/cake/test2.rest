@@ -1,0 +1,11 @@
+@host = https://jsonplaceholder.typicode.com/posts
+@host2 = https://remoteapi.nazs.net/api/customers
+@id = 609fa9f0959a9e47df372a83
+
+get {{host}}
+###
+get {{host}}
+###
+get {{host2}}
+###
+get {{host2}}/{{id}}
